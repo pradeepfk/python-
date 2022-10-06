@@ -1,0 +1,68 @@
+print(" s for snake , w for water, g for gun game(like stone paper scissor) using import")
+#use random.choice
+# use must choose s,w,g & cpu must choose random
+#if
+#snake vs water=snake drinks water and win
+#gun vs snake= gun fires & wins
+#water vs gun = water wins(gun drown in water)
+#play for 10times
+#print how many times u win,and cpu wins
+import random
+i=0
+x=0
+y=0
+hp=0
+cp=0
+while i<10:
+    try:
+        ran=["s","w","g"]
+        print("write ur choice : s for snake|w for water|g for gun")
+        ip = str(input("me:"))
+        rp = random.choice(ran)
+        print("cpu:",rp)
+        i=i+1
+        if ip==rp:
+            print(f" its a tie! & matches played :",i)
+        elif ip not in ran:
+            print(" enter within the given choices brooo")
+        elif ip=="s":
+            if rp=="w":
+                print(f"snake wins and matches played are {i} ")
+                hp=hp+1
+                print(f"my score : {hp} and CPU score : {cp}")
+
+            else:
+                print(f"gun wins and matches played are {i} ")
+                cp=cp+1
+                print(f"my score : {hp} and CPU score : {cp}")
+        elif ip=="w":
+            if rp=="g":
+                print(f"water wins and matches played are {i} ")
+                hp = hp + 1
+                print(f"my score : {hp} and CPU score : {cp}")
+            else:
+                print(f"gun wins and matches played are {i} ")
+                cp = cp + 1
+                print(f"my score : {hp} and CPU score : {cp}")
+        elif ip=="g":
+            if rp=="s":
+                print(f"gun wins and matches played are {i} ")
+                hp = hp + 1
+                print(f"my score : {hp} and CPU score : {cp}")
+            else:
+                print(f"snake wins and matches played are {i} ")
+                cp = cp + 1
+                print(f"my score : {hp} and CPU score : {cp}")
+        if i==10:
+            break
+    except Exception as e:
+     print("error",e)
+
+if cp>hp:
+    print(f"cpu wins with pts {cp}")
+elif cp<hp:
+    print(f"u won with {hp} pts")
+else:
+    print("its a tie")
+
+print("--------------------")
